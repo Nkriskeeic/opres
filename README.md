@@ -24,10 +24,10 @@ some_var = Nothing()
 sum_of_some_var = some_var.map(sum)  # Nothing()
 
 res_var = Ok("text")
-length_of_text = res_var.map_or(len, 0)  # 4 your editor will interpret `length_of_text` as an Result[int]
+length_of_text = res_var.map_or(len, 0)  # Ok(4) your editor will interpret `length_of_text` as an Result[int]
 
 res_var = Err("not found")
-length_of_text = res_var.map_or(len, 0)  # 0
+length_of_text = res_var.map_or(len, 0)  # Ok(0)
 ```
 
 ## examples
