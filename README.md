@@ -32,7 +32,7 @@ length_of_text = res_var.map_or(len, 0)  # Ok(0)
 
 ## examples
 
-Please see `examples` or `tests`.
+Please see `./examples` or `./tests`.
 
 
 ## Support
