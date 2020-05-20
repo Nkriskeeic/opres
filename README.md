@@ -27,6 +27,11 @@ res_var = Err("not found")
 length_of_text = res_var.map_or(len, 0)  # 0
 ```
 
+## examples
+
+Please see `examples` or `tests`.
+
+
 ## Support
 
 ### Option[T]
