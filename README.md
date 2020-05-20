@@ -18,10 +18,13 @@ pip install git+https://github.com/Nkriskeeic/opres
 from opres import Option, Some, Nothing, Result, Ok, Err
 
 some_var = Some([100, 200])
-sum_of_some_var = some_var.map(sum).unwrap()  # your editor will interpret `sum_of_some_var` as an integer
+sum_of_some_var = some_var.map(sum)  # Some(300)
+
+some_var = Nothing()
+sum_of_some_var = some_var.map(sum)  # Nothing()
 
 res_var = Ok("text")
-length_of_text = res_var.map_or(len, 0)  # 4
+length_of_text = res_var.map_or(len, 0)  # 4 your editor will interpret `length_of_text` as an Result[int]
 
 res_var = Err("not found")
 length_of_text = res_var.map_or(len, 0)  # 0
@@ -33,6 +36,13 @@ Please see `examples` or `tests`.
 
 
 ## Support
+
+- Option[T]: `from opres import Option`
+    - Some[T]: `from opres import Some`
+    - Nothing: `from opres import Nothing`
+- Result[T, E]: `from opres import Result`
+    - Ok[T]: `from opres import Ok`
+    - Err[T]: `from opres import Err`
 
 ### Option[T]
 
