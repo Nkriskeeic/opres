@@ -160,7 +160,7 @@ class Err(Result[T, E]):
         sys.exit(str(message))  # 0を渡されると正常終了とみなされるため
 
     def map(self, f: Callable[[T], S]) -> 'Result[S, E]':
-        return self
+        return Err(self.error)
 
     def map_or(self, f: Callable[[T], S], default: S) -> 'Result[S, E]':
         return Ok(default)

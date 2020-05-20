@@ -151,7 +151,7 @@ class Nothing(Option[T]):
         sys.exit(message)
 
     def map(self, f: Callable[[T], S]) -> 'Option[S]':
-        return self
+        return Nothing()
 
     def map_or(self, f: Callable[[T], S], default: S) -> 'Option[S]':
         return Some(default)
