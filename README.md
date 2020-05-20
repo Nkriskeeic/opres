@@ -9,7 +9,7 @@ This module enables you to use Option and Result types in your Python project.
 1. install this module
 
 ```shell script
-pip install git+{URL}
+pip install git+https://github.com/Nkriskeeic/opres
 ``` 
 
 2. import `opres` in your script
