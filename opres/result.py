@@ -18,34 +18,43 @@ class Result(Generic[T, E], metaclass=abc.ABCMeta):
     def unwrap_err(self) -> E:
         pass
 
+    @abc.abstractmethod
     def unwrap_or(self, default: T) -> T:
         pass
 
+    @abc.abstractmethod
     def unwrap_or_else(self, default_func: Callable[[], T]) -> T:
         pass
 
+    @abc.abstractmethod
     def is_ok(self) -> bool:
         pass
 
+    @abc.abstractmethod
     def is_err(self) -> bool:
         pass
 
+    @abc.abstractmethod
     def expect(self, message: str) -> T:
         pass
 
+    @abc.abstractmethod
     def map(self, f: Callable[[T], S]) -> 'Result[S, E]':
         pass
 
+    @abc.abstractmethod
     def map_or(self, f: Callable[[T], S], default: S) -> 'Result[S, E]':
         pass
 
+    @abc.abstractmethod
     def map_or_else(self, f: Callable[[T], S], default_func: Callable[[], S]) -> 'Result[S, E]':
         pass
 
-    def ok(self):
+    @abc.abstractmethod
+    def ok(self) -> 'opt.Option[T]':
         pass
 
-    def err(self):
+    def err(self) -> 'opt.Option[E]':
         pass
 
 

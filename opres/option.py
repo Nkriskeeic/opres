@@ -46,11 +46,11 @@ class Option(Generic[T], metaclass=abc.ABCMeta):
         pass
 
     @abc.abstractmethod
-    def ok_or(self, err: E) -> res.Result[T, E]:
+    def ok_or(self, err: E) -> 'res.Result[T, E]':
         pass
 
     @abc.abstractmethod
-    def ok_or_else(self, err_func: Callable[[], E]) -> res.Result[T, E]:
+    def ok_or_else(self, err_func: Callable[[], E]) -> 'res.Result[T, E]':
         pass
 
 
